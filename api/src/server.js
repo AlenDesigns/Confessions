@@ -15,6 +15,9 @@ app.use(json());
 app.use(urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
+app.route('/confession').get().post();
+
+app.route('/confession/:id').get().put().delete();
 export const start = () => {
     try {
         app.listen(PORT, () => {
